@@ -10,6 +10,6 @@ if [ "$( id -g watcher )" -ne "${LGID}" ]; then
 fi
 
 # Set permissions
-chown -R watcher:watcher /config/ /opt/watcher
+chown -R watcher:watcher /config/ /opt/watcher /log
 
 exec runuser -l watcher -c 'python /opt/watcher/app/watcher.py --conf /config/config.cfg --log /log/'
