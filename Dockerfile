@@ -17,6 +17,8 @@ RUN groupadd -g $LGID watcher && \
 # Grab the installer, do the thing
 RUN git clone -q https://github.com/nosmokingbandit/watcher.git /opt/watcher/app && \
     chown -R watcher:watcher /opt/watcher
+    
+RUN chmod -R 777 /log
 
 # Need a config and storage volume, expose proper port
 VOLUME /config /log /downloads /movies
